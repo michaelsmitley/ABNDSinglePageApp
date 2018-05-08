@@ -1,0 +1,20 @@
+<resources>
+    <string name="app_name">Kengo</string>
+    <string name="directionsButton">Directions</string>
+    <string name="callButton">Call</string>
+    <string name="shareButton">Share</string>
+    <string name="webButton">Website</string>
+    <string name="placeName">Kengo Sushi</string>
+    <string name="placeCategory">Asian Restaurant</string>
+    <string name="address1">38 S Saint Clair St</string>
+    <string name="address2">Toledo, OH 43604</string>
+    <string name="url">www.kengotoledo.com</string>
+    <string name="mondayhours">Monday: Closed</string>
+    <string name="tuesdayhours">Tuesday: 5PM-10PM</string>
+    <string name="wednesdayhours">Wednesday: 5PM-10PM</string>
+    <string name="thursdayhours">Thursday: 5PM-10PM</string>
+    <string name="fridayhours">Friday: 5PM-10PM</string>
+    <string name="saturdayhours">Saturday: 5PM-10PM</string>
+    <string name="sundayhours">Sunday: Closed</string>
+    <string name="phone_number">(419) 214-0574</string>
+</resources>

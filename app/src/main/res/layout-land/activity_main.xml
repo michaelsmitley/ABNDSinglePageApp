@@ -1,0 +1,290 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="horizontal"
+    tools:context="com.example.android.abndsinglepageapp.MainActivity">
+
+    <ViewFlipper
+        android:id="@+id/photo"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:autoStart="true"
+        android:flipInterval="5000">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="centerCrop"
+            android:src="@drawable/westernsushi" />
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="centerCrop"
+            android:src="@drawable/asian_restaurant" />
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="centerCrop"
+            android:src="@drawable/sushi1" />
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="centerCrop"
+            android:src="@drawable/sushi2" />
+
+    </ViewFlipper>
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@android:color/white"
+            android:elevation="2dp">
+
+            <TextView
+                android:id="@+id/placeName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingLeft="@dimen/placeMargin"
+                android:paddingStart="@dimen/placeMargin"
+                android:paddingTop="@dimen/placeMargin"
+                android:text="@string/placeName"
+                android:textColor="@android:color/black"
+                android:textSize="@dimen/placeNameTextSize" />
+
+            <TextView
+                android:id="@+id/placeCategory"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/placeName"
+                android:paddingBottom="@dimen/placeMargin"
+                android:paddingLeft="@dimen/placeMargin"
+                android:paddingStart="@dimen/placeMargin"
+                android:text="@string/placeCategory"
+                android:textColor="@android:color/background_dark"
+                android:textSize="@dimen/placeCategoryTextSize" />
+
+            <Button
+                android:id="@+id/callButton"
+                style="@style/Widget.AppCompat.Button.Borderless.Colored"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:drawableTint="@android:color/holo_blue_dark"
+                android:drawableTop="@drawable/ic_call_black_24dp"
+                android:onClick="placeCall"
+                android:text="@string/callButton"
+                android:textColor="@android:color/holo_blue_dark" />
+
+            <Button
+                android:id="@+id/webButton"
+                style="@style/Widget.AppCompat.Button.Borderless.Colored"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_toLeftOf="@id/callButton"
+                android:drawableTint="@android:color/holo_blue_dark"
+                android:drawableTop="@drawable/ic_web_black_24dp"
+                android:onClick="visitWebsite"
+                android:text="@string/webButton"
+                android:textColor="@android:color/holo_blue_dark" />
+
+        </RelativeLayout>
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:id="@+id/mapIcon"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/separator_margin"
+                    android:src="@drawable/ic_directions_black_24dp" />
+
+                <TextView
+                    android:id="@+id/address1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/separator_margin"
+                    android:layout_toEndOf="@+id/mapIcon"
+                    android:layout_toRightOf="@id/mapIcon"
+                    android:text="@string/address1" />
+
+                <TextView
+                    android:id="@+id/address2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/address1"
+                    android:layout_toEndOf="@+id/mapIcon"
+                    android:layout_toRightOf="@id/mapIcon"
+                    android:text="@string/address2" />
+
+                <View
+                    android:id="@+id/address_separator"
+                    android:layout_width="match_parent"
+                    android:layout_height="0.1dp"
+                    android:layout_below="@id/address2"
+                    android:layout_marginTop="@dimen/separator_margin"
+                    android:background="@android:color/darker_gray" />
+
+                <ImageView
+                    android:id="@+id/hoursIcon"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/address_separator"
+                    android:layout_margin="@dimen/separator_margin"
+                    android:src="@drawable/ic_watch_later_black_24dp" />
+
+                <TextView
+                    android:id="@+id/monday_hours"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/address_separator"
+                    android:layout_marginTop="@dimen/separator_margin"
+                    android:layout_toEndOf="@+id/hoursIcon"
+                    android:layout_toRightOf="@id/hoursIcon"
+                    android:text="@string/mondayhours" />
+
+                <TextView
+                    android:id="@+id/tuesday_hours"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/monday_hours"
+                    android:layout_toEndOf="@+id/hoursIcon"
+                    android:layout_toRightOf="@id/hoursIcon"
+                    android:text="@string/tuesdayhours" />
+
+                <TextView
+                    android:id="@+id/wednesday_hours"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/tuesday_hours"
+                    android:layout_toEndOf="@+id/hoursIcon"
+                    android:layout_toRightOf="@id/hoursIcon"
+                    android:text="@string/wednesdayhours" />
+
+                <TextView
+                    android:id="@+id/thursday_hours"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/wednesday_hours"
+                    android:layout_toEndOf="@+id/hoursIcon"
+                    android:layout_toRightOf="@id/hoursIcon"
+                    android:text="@string/thursdayhours" />
+
+                <TextView
+                    android:id="@+id/friday_hours"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/thursday_hours"
+                    android:layout_toEndOf="@+id/hoursIcon"
+                    android:layout_toRightOf="@id/hoursIcon"
+                    android:text="@string/fridayhours" />
+
+                <TextView
+                    android:id="@+id/saturdayhours"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/friday_hours"
+                    android:layout_toEndOf="@+id/hoursIcon"
+                    android:layout_toRightOf="@id/hoursIcon"
+                    android:text="@string/saturdayhours" />
+
+                <TextView
+                    android:id="@+id/sundayhours"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/saturdayhours"
+                    android:layout_toEndOf="@+id/hoursIcon"
+                    android:layout_toRightOf="@id/hoursIcon"
+                    android:text="@string/sundayhours" />
+
+                <View
+                    android:id="@+id/hours_separator"
+                    android:layout_width="match_parent"
+                    android:layout_height="0.1dp"
+                    android:layout_below="@id/sundayhours"
+                    android:layout_marginTop="@dimen/separator_margin"
+                    android:background="@android:color/darker_gray" />
+
+                <ImageView
+                    android:id="@+id/phoneIcon"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/hours_separator"
+                    android:layout_margin="@dimen/separator_margin"
+                    android:src="@drawable/ic_call_black_24dp" />
+
+                <TextView
+                    android:id="@+id/phoneNumber"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/hours_separator"
+                    android:layout_marginTop="@dimen/separator_margin"
+                    android:layout_toEndOf="@+id/hoursIcon"
+                    android:layout_toRightOf="@id/hoursIcon"
+                    android:onClick="placeCall"
+                    android:text="@string/phone_number" />
+
+                <View
+                    android:id="@+id/phone_separator"
+                    android:layout_width="match_parent"
+                    android:layout_height="0.1dp"
+                    android:layout_below="@id/phoneNumber"
+                    android:layout_marginTop="@dimen/separator_margin"
+                    android:background="@android:color/darker_gray" />
+
+                <ImageView
+                    android:id="@+id/webIcon"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/phone_separator"
+                    android:layout_margin="@dimen/separator_margin"
+                    android:src="@drawable/ic_web_black_24dp" />
+
+                <TextView
+                    android:id="@+id/webAddress"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/phone_separator"
+                    android:layout_marginTop="@dimen/separator_margin"
+                    android:layout_toEndOf="@+id/hoursIcon"
+                    android:layout_toRightOf="@id/hoursIcon"
+                    android:onClick="visitWebsite"
+                    android:text="@string/url" />
+
+                <View
+                    android:id="@+id/web_separator"
+                    android:layout_width="match_parent"
+                    android:layout_height="0.1dp"
+                    android:layout_below="@id/phoneNumber"
+                    android:layout_marginTop="@dimen/separator_margin"
+                    android:background="@android:color/darker_gray" />
+
+            </RelativeLayout>
+
+
+        </ScrollView>
+
+    </LinearLayout>
+
+
+</LinearLayout>
